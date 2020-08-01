@@ -1,0 +1,33 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- thanks
+- find_similar_movie
+- find_similar_movie_for_movie
+- movie_info
+entities:
+- movie
+slots:
+  movie:
+    type: text
+responses:
+  utter_greet:
+  - text: Hey! I am Movie Recommendation Bot!
+  utter_ask_movie:
+  - text: Which is your Favourite Movie?
+  utter_finding_similar_movie:
+  - text: OK, give me a sec to look up a similar movie like {movie}...
+  utter_you_are_welcome:
+  - text: You are Welcome
+  utter_goodbye:
+  - text: Bye
+actions:
+- action_give_similar_movie
+- utter_greet
+- utter_finding_similar_movie
+- utter_ask_movie
+- utter_you_are_welcome
+- utter_goodbye
